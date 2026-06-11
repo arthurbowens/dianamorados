@@ -44,9 +44,10 @@ import { IconName } from '../../shared/icons/icon.types';
             <app-icon name="music" [size]="18" />
           </div>
           <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-rose-50">Nossa música</p>
-          @if (musicError()) {
-              <p class="text-xs text-rose-400/50 truncate">adicione em public/music/</p>
+            <p class="text-sm font-medium text-rose-50">{{ musicTitle }}</p>
+            <p class="text-xs text-rose-400/60 truncate">{{ musicArtist }}</p>
+            @if (musicError()) {
+              <p class="text-xs text-rose-400/50 truncate mt-0.5">não foi possível carregar a música</p>
             }
           </div>
         </div>
@@ -78,7 +79,9 @@ import { IconName } from '../../shared/icons/icon.types';
   `,
 })
 export class HomeComponent {
-  readonly musicFile = APP_CONFIG.musicFile;
+  readonly musicFile = encodeURI(APP_CONFIG.musicFile);
+  readonly musicTitle = APP_CONFIG.musicTitle;
+  readonly musicArtist = APP_CONFIG.musicArtist;
   readonly daysTogether = getDaysTogether(APP_CONFIG.relationshipStart);
   readonly startFormatted = new Date(APP_CONFIG.relationshipStart + 'T12:00:00').toLocaleDateString(
     'pt-BR',

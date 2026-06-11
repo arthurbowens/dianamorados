@@ -7,8 +7,9 @@ export const APP_CONFIG = {
   yourName: 'Arthur',
   /** Data em que vocês começaram a namorar (YYYY-MM-DD) */
   relationshipStart: '2025-01-04',
-  /** Música de vocês — coloque o arquivo em public/music/nossa-musica.mp3 */
-  musicFile: '/music/nossa-musica.mp3',
+  musicTitle: 'Sailor Song',
+  musicArtist: 'Gigi Perez',
+  musicFile: '/music/Sailor Song - Gigi Perez.mp3',
 };
 
 export interface TimelineEvent {
