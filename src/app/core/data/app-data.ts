@@ -73,31 +73,47 @@ export const TIMELINE: TimelineEvent[] = [
 
 export interface GalleryItem {
   id: string;
-  caption: string;
+  elogio: string;
   image: string;
 }
 
-const GALLERY_CAPTIONS = [
-  'Nós dois',
-  'Juntos',
-  'Minha pessoa',
-  'Te amo',
-  'Princesinha',
-  'Memória guardada',
-  'Meu sorriso favorito',
-  'Dia perfeito',
-  'Contigo',
-  'Momentos nossos',
+const GALLERY_ELOGIOS = [
+  'Teu sorriso salva meu dia',
+  'Tu é a mais linda que existe',
+  'Cada foto nossa é um tesouro',
+  'Tu deixa tudo mais bonito',
+  'Minha princesinha japonesa',
+  'Teu olhar é meu lugar favorito',
+  'Tu é perfeita do teu jeito',
+  'Não tem ninguém igual a ti',
+  'Tu é a melhor coisa que me aconteceu',
+  'Contigo tudo fica melhor',
+  'Teu abraço conserta qualquer dia ruim',
+  'Tu é linda demais',
+  'Cada momento contigo é ouro',
+  'Tu me inspira todo dia',
+  'Teu jeito me deixa bobo',
+  'Tu é linda por dentro e por fora',
+  'Minha sushimaki favorita',
+  'Tu faz meu coração disparar',
+  'Tu é tudo que eu queria',
+  'Teu riso é a melhor música',
+  'Tu é forte demais, amor',
+  'Teu carinho salva meu dia',
+  'Tu é a razão do meu sorriso',
+  'Todo dia contigo é presente',
+  'Tu é minha pessoa favorita no mundo',
+  'Te amo mais do que consigo falar',
+  'Tu é meu amor pra sempre',
 ];
 
 const GALLERY_PHOTO_COUNT = 27;
 
-/** Edite as legendas em GALLERY_CAPTIONS ou substitua por entradas manuais */
 export const GALLERY: GalleryItem[] = Array.from({ length: GALLERY_PHOTO_COUNT }, (_, i) => {
   const n = i + 1;
   return {
     id: String(n),
-    caption: GALLERY_CAPTIONS[i % GALLERY_CAPTIONS.length],
+    elogio: GALLERY_ELOGIOS[i],
     image: `/images/foto${n}.jpeg`,
   };
 });
