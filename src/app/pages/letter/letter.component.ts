@@ -23,16 +23,11 @@ import { IconComponent } from '../../shared/icons/icon.component';
           <p class="text-pink-50/90 leading-relaxed mb-4 last:mb-0 whitespace-pre-line">{{ paragraph }}</p>
         }
       </article>
-      <p class="text-center text-pink-300/50 text-sm mt-6 flex items-center justify-center gap-1.5">
-        Com amor, {{ yourName }}
-        <app-icon name="heart" [size]="14" class="text-pink-400" />
-      </p>
     }
   `,
 })
 export class LetterComponent {
   readonly herName = APP_CONFIG.herName;
-  readonly yourName = APP_CONFIG.yourName;
   readonly paragraphs = LOVE_LETTER.split('\n\n');
   readonly revealed = signal(false);
 

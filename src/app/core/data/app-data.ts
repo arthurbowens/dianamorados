@@ -118,16 +118,29 @@ export const GALLERY: GalleryItem[] = Array.from({ length: GALLERY_PHOTO_COUNT }
   };
 });
 
-export const LOVE_LETTER = `Minha Fernanda,
+export const LOVE_LETTER = `Para Fernanda ❤️
 
-Se tu está lendo isso, é porque eu passei semanas montando esse cantinho só pra ti — e cada linha de código foi escrita pensando no teu sorriso.
+Minha japonesinha,
 
-Tu transformou minha rotina em aventura. Nos dias difíceis, tu é meu abrigo. Nos dias bons, tu é a razão de eles serem ainda melhores.
+Se tu ta lendo isso, significa que chegou ao final de uma pequena surpresa que eu preparei com muito carinho. Talvez pareça apenas um site, algumas páginas e algumas linhas de código. Mas, na verdade, cada detalhe foi feito pensando em te fazer sorrir e feliz.
 
-Obrigado por rir das minhas piadas ruins, por dividir silêncios confortáveis e por escolher ficar. Eu escolho tu todos os dias — hoje, no Dia dos Namorados, e em todos os outros.
+Eu passo meus dias programando, resolvendo problemas e criando coisas. Mas nenhuma criação minha chega perto da melhor coisa que aconteceu na minha vida: te encontrar.
+
+Tu trouxe leveza para os meus dias mais difíceis, transformou momentos simples em memórias que eu quero guardar para sempre e me mostrou que felicidade de verdade está nas pequenas coisas: uma conversa, uma risada, um abraço teu depois de um dia cansativo.
+
+Obrigado por estar ao meu lado. Obrigado pela tua paciência, pelo teu carinho, pelas brincadeiras, pelos momentos que compartilhamos e por fazer eu me sentir amado de uma forma que nunca imaginei.
+
+Eu amo o teu jeito, o teu sorriso, a tua voz, as tuas manias e até aquelas pequenas coisas que talvez tu nem perceba, mas que fazem eu me apaixonar mais um pouquinho todos os dias.
+
+Se eu pudesse te fazer uma promessa hoje, seria essa: continuar escolhendo tu todos os dias. Nos dias fáceis, nos dias difíceis, nos momentos de certeza e nos momentos de dúvida. Porque, entre todas as possibilidades que a vida poderia me dar, tu continua sendo a minha favorita.
+
+Espero que esse seja apenas mais um dos muitos Dias dos Namorados que ainda vamos viver juntos.
+
+Eu te amo mais do que qualquer código conseguiria explicar.
 
 Com todo o meu amor,
-Arthur`;
+
+Arthur ❤️`;
 
 export const REASONS = [
   'Pelo sorriso mais lindo do mundo que tu tem',
