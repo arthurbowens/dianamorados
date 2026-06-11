@@ -14,7 +14,7 @@ import { IconComponent } from '../../shared/icons/icon.component';
         <div class="icon-circle-lg mx-auto mb-4">
           <app-icon name="mail" [size]="36" class="text-pink-300" />
         </div>
-        <p class="text-pink-100/80 mb-6">Tem uma carta esperando por você...</p>
+        <p class="text-pink-100/80 mb-6">Tem uma carta esperando por ti...</p>
         <button class="btn-primary" (click)="reveal()">Abrir carta</button>
       </div>
     } @else {

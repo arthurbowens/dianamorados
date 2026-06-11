@@ -48,6 +48,10 @@ export const routes: Routes = [
         path: 'jogos/coracoes',
         loadComponent: () => import('./pages/games/hearts/hearts.component').then((m) => m.HeartsComponent),
       },
+      {
+        path: 'jogos/casar',
+        loadComponent: () => import('./pages/games/proposal/proposal.component').then((m) => m.ProposalComponent),
+      },
     ],
   },
   { path: '**', redirectTo: '' },

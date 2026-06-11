@@ -36,7 +36,7 @@ export const TIMELINE: TimelineEvent[] = [
   },
   {
     date: '27 Dez 2024',
-    title: 'Sua família',
+    title: 'Tua família',
     description:
       'Primeira vez que vi tua família, tantos japoneses que fiquei perdido kkkkkkk.',
     icon: 'tree-pine',
@@ -86,7 +86,7 @@ const GALLERY_CAPTIONS = [
   'Memória guardada',
   'Meu sorriso favorito',
   'Dia perfeito',
-  'Com você',
+  'Contigo',
   'Momentos nossos',
 ];
 
@@ -104,72 +104,43 @@ export const GALLERY: GalleryItem[] = Array.from({ length: GALLERY_PHOTO_COUNT }
 
 export const LOVE_LETTER = `Minha Fernanda,
 
-Se você está lendo isso, é porque eu passei semanas montando esse cantinho só pra você — e cada linha de código foi escrita pensando no seu sorriso.
+Se tu está lendo isso, é porque eu passei semanas montando esse cantinho só pra ti — e cada linha de código foi escrita pensando no teu sorriso.
 
-Você transformou minha rotina em aventura. Nos dias difíceis, você é meu abrigo. Nos dias bons, você é a razão de eles serem ainda melhores.
+Tu transformou minha rotina em aventura. Nos dias difíceis, tu é meu abrigo. Nos dias bons, tu é a razão de eles serem ainda melhores.
 
-Obrigado por rir das minhas piadas ruins, por dividir silêncios confortáveis e por escolher ficar. Eu escolho você todos os dias — hoje, no Dia dos Namorados, e em todos os outros.
+Obrigado por rir das minhas piadas ruins, por dividir silêncios confortáveis e por escolher ficar. Eu escolho tu todos os dias — hoje, no Dia dos Namorados, e em todos os outros.
 
 Com todo o meu amor,
 Arthur`;
 
 export const REASONS = [
-  'O jeito que você ri de verdade',
-  'Sua paciência comigo (mesmo quando eu mereço bronca)',
-  'Como você me faz querer ser melhor',
-  'Seus abraços que consertam qualquer dia ruim',
-  'A forma como você ouve — de verdade',
+  'Pelo sorriso mais lindo do mundo que tu tem',
+  'Porque tu faz as melhores comidinhas do mundo',
+  'Como tu me faz querer ser melhor',
+  'Teus abraços que consertam qualquer dia ruim',
+  'Pelo esforço na faculdade e no estágio, e mesmo assim tu é carinhosa comigo',
   'Nossas conversas até tarde',
-  'Você lembrar dos detalhes pequenos',
-  'Sua força quando as coisas ficam difíceis',
-  'Como tudo fica mais leve com você por perto',
-  'Porque com você, eu encontrei meu lar',
+  'Tu lembrar dos detalhes pequenos',
+  'Tua força quando as coisas ficam difíceis',
+  'Como tudo fica mais leve contigo por perto',
+  'Porque contigo, eu encontrei meu lar',
 ];
 
 export interface Coupon {
   id: string;
   title: string;
-  description: string;
   icon: IconName;
 }
 
 export const COUPONS: Coupon[] = [
-  {
-    id: 'jantar',
-    title: 'Jantar feito por mim',
-    description: 'Você escolhe o cardápio. Eu faço tudo — e lavo a louça.',
-    icon: 'utensils',
-  },
-  {
-    id: 'massagem',
-    title: 'Massagem de 30 min',
-    description: 'Sem pressa, sem celular, só relaxar.',
-    icon: 'hand',
-  },
-  {
-    id: 'filme',
-    title: 'Filme que você escolhe',
-    description: 'Qualquer filme. Eu não reclamo. Prometo.',
-    icon: 'film',
-  },
-  {
-    id: 'cafe',
-    title: 'Café da manhã na cama',
-    description: 'Num domingo de preguiça, com tudo que você gosta.',
-    icon: 'croissant',
-  },
-  {
-    id: 'passeio',
-    title: 'Passeio surpresa',
-    description: 'Eu planejo, você só aparece. Confia em mim.',
-    icon: 'flower-2',
-  },
-  {
-    id: 'pedido',
-    title: 'Um pedido seu',
-    description: 'Qualquer coisa dentro do possível — me surpreenda.',
-    icon: 'gift',
-  },
+  { id: 'jantar', title: 'Jantar feito por mim', icon: 'utensils' },
+  { id: 'massagem', title: 'Massagem de 30 min', icon: 'hand' },
+  { id: 'filme', title: 'Filme que tu escolhe', icon: 'film' },
+  { id: 'picnic', title: 'Picnic romântico', icon: 'heart' },
+  { id: 'sobremesa', title: 'Pudim de sorvete ou sobremesa que tu quiser', icon: 'coffee' },
+  { id: 'jogos', title: 'Noite de jogos', icon: 'gamepad-2' },
+  { id: 'beijinhos', title: 'Beijinhos', icon: 'heart' },
+  { id: 'colinho', title: 'Um dia inteiro só de colinho', icon: 'moon' },
 ];
 
 export interface QuizQuestion {
@@ -195,7 +166,7 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 1,
   },
   {
-    question: 'Onde você conheceu minha mãe e o Enzo?',
+    question: 'Onde tu conheceu minha mãe e o Enzo?',
     options: ['No CSC', 'Na Insanitaria', 'No Bokas', 'Em Gramado'],
     correctIndex: 2,
   },
@@ -215,12 +186,12 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 1,
   },
   {
-    question: 'O que eu mais amo em você?',
-    options: ['Tudo', 'Seu sorriso', 'Sua inteligência', 'Todas as anteriores'],
+    question: 'O que eu mais amo em ti?',
+    options: ['Tudo', 'Teu sorriso', 'Tua inteligência', 'Todas as anteriores'],
     correctIndex: 3,
   },
   {
-    question: 'Quantas vezes por dia eu penso em você?',
+    question: 'Quantas vezes por dia eu penso em ti?',
     options: ['5', '20', '100', 'Perdi a conta'],
     correctIndex: 3,
   },
@@ -233,14 +204,14 @@ export interface WordScrambleItem {
 }
 
 export const WORD_SCRAMBLE: WordScrambleItem[] = [
-  { word: 'AMOR', hint: 'O que sinto por você', scrambled: 'ROMA' },
+  { word: 'AMOR', hint: 'O que sinto por ti', scrambled: 'ROMA' },
   { word: 'BEIJO', hint: 'O que eu quero te dar agora', scrambled: 'OJEIB' },
   { word: 'FERNANDA', hint: 'O nome da pessoa mais especial', scrambled: 'NADNAFRE' },
-  { word: 'SONHO', hint: 'Você é o meu...', scrambled: 'HONSO' },
-  { word: 'FELIZ', hint: 'Como você me faz', scrambled: 'ZILEF' },
-  { word: 'BOKAS', hint: 'Onde você conheceu minha mãe', scrambled: 'SOKAB' },
+  { word: 'SONHO', hint: 'Tu é o meu...', scrambled: 'HONSO' },
+  { word: 'FELIZ', hint: 'Como tu me faz', scrambled: 'ZILEF' },
+  { word: 'BOKAS', hint: 'Onde tu conheceu minha mãe', scrambled: 'SOKAB' },
   { word: 'NAMORO', hint: 'O que começou em janeiro', scrambled: 'OROMAN' },
-  { word: 'JUNTOS', hint: 'Como gosto de estar com você', scrambled: 'TOSJUN' },
+  { word: 'JUNTOS', hint: 'Como gosto de estar contigo', scrambled: 'TOSJUN' },
   { word: 'SEMPRE', hint: 'Eu te escolho...', scrambled: 'MESPRE' },
   { word: 'SASHIMI', hint: 'O que tu é, minha?', scrambled: 'IMSASHI' },
   { word: 'MARILIA', hint: 'Primeira viagem de avião', scrambled: 'AIRLAMI' },
@@ -261,7 +232,7 @@ export const GAME_INFO: {
     id: 'quiz',
     route: '/jogos/quiz',
     title: 'Quiz do Amor',
-    description: 'Quanto você sabe sobre nós?',
+    description: 'Quanto tu sabe sobre nós?',
     icon: 'lightbulb',
     color: 'from-rose-400 to-rose-600',
   },
@@ -280,5 +251,13 @@ export const GAME_INFO: {
     description: 'Clique nos corações antes que sumam!',
     icon: 'heart',
     color: 'from-rose-500 to-red-700',
+  },
+  {
+    id: 'proposal',
+    route: '/jogos/casar',
+    title: 'Quer casar comigo?',
+    description: 'Só tem uma resposta certa...',
+    icon: 'gem',
+    color: 'from-rose-400 to-red-600',
   },
 ];

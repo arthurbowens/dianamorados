@@ -92,4 +92,8 @@ export class ProgressService {
   completeScramble(): void {
     this.completeGame('scramble');
   }
+
+  completeProposal(): void {
+    this.completeGame('proposal');
+  }
 }

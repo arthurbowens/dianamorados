@@ -601,6 +601,87 @@ body {
     0 0 8px #000;
 }
 
+/* ─── Proposal game ─── */
+.proposal-arena {
+  height: min(220px, 38dvh);
+  min-height: 180px;
+  background: rgba(159, 18, 57, 0.08);
+  border: 1px dashed var(--color-rose-border-strong);
+}
+
+.proposal-no-btn {
+  transition:
+    left 0.12s ease-out,
+    top 0.12s ease-out;
+  z-index: 2;
+}
+
+.proposal-win {
+  background: rgba(18, 6, 13, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.proposal-win-actions {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 210;
+  padding: 1rem 1.25rem max(1.25rem, env(safe-area-inset-bottom));
+  max-width: 32rem;
+  margin-inline: auto;
+  pointer-events: auto;
+}
+
+.proposal-tiao-storm--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 205;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.proposal-tiao-fly {
+  position: absolute;
+  top: 0;
+  width: 5rem;
+  max-width: 18vw;
+  border: 3px solid #fff;
+  background: #000;
+  box-shadow: 0 6px 24px rgba(159, 18, 57, 0.45);
+  transform: rotate(var(--tiao-rot, -8deg)) scale(var(--tiao-scale, 1));
+  animation: proposal-tiao-fly linear infinite;
+  z-index: 1;
+  will-change: transform;
+}
+
+.proposal-tiao-fly:nth-child(odd) {
+  z-index: 2;
+}
+
+.proposal-tiao-caption {
+  font-size: 0.65rem;
+}
+
+@keyframes proposal-tiao-fly {
+  from {
+    transform: translate(0, var(--tiao-start-y, 100vh)) rotate(var(--tiao-rot, 0deg))
+      scale(var(--tiao-scale, 1));
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--tiao-drift-x, 0), var(--tiao-end-y, -120vh))
+      rotate(calc(var(--tiao-rot, 0deg) + 22deg)) scale(var(--tiao-scale, 1));
+    opacity: 0;
+  }
+}
+
 /* ─── Hearts game ─── */
 .hearts-arena {
   background: var(--color-rose-surface);

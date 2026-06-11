@@ -11,7 +11,7 @@ import { IconComponent } from '../../../shared/icons/icon.component';
   template: `
     <app-page-header
       title="Jogos do Amor"
-      subtitle="Diversão feita só pra você"
+      subtitle="Diversão feita só pra ti"
     />
 
     <div class="space-y-3">
@@ -41,7 +41,7 @@ import { IconComponent } from '../../../shared/icons/icon.component';
 
     <div class="card mt-6 text-center">
       <p class="text-pink-200/70 text-sm">
-        Complete todos os jogos e descubra o quanto você é especial!
+        Complete todos os jogos e descubra o quanto tu é especial!
       </p>
       <p class="text-white font-display text-2xl mt-2">
         {{ progress.gamesCompletedCount() }} / {{ games.length }}

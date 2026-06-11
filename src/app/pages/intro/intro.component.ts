@@ -29,7 +29,7 @@ import { IconComponent } from '../../shared/icons/icon.component';
             <app-icon name="mail" [size]="40" class="text-pink-300" />
           </div>
           <p class="text-lg text-rose-200 leading-relaxed font-medium">
-            Algo especial foi preparado só para você.
+            Algo especial foi preparado só pra ti.
           </p>
           <p class="text-rose-400/60 mt-4 text-sm">Dia dos Namorados 2026</p>
           <button class="btn-primary mt-10" (click)="enter()">Entrar no app</button>

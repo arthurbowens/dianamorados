@@ -44,7 +44,7 @@ interface FallingHeart {
         <app-icon [name]="score() >= 15 ? 'trophy' : 'dumbbell'" [size]="40" class="text-pink-400 mx-auto mb-2 block" />
         <p class="text-white font-semibold text-xl">{{ score() }} pontos!</p>
         <p class="text-pink-200/70 text-sm mt-2">
-          {{ score() >= 15 ? 'Incrível! Você tem reflexos de amor!' : 'Tenta de novo, você consegue!' }}
+          {{ score() >= 15 ? 'Incrível! Tu tem reflexos de amor!' : 'Tenta de novo, tu consegue!' }}
         </p>
         <button class="btn-primary w-full mt-4" (click)="start()">Jogar de novo</button>
       </div>

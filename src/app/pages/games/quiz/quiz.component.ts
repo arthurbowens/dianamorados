@@ -10,7 +10,7 @@ import { IconName } from '../../../shared/icons/icon.types';
   selector: 'app-quiz',
   imports: [PageHeaderComponent, RouterLink, IconComponent],
   template: `
-    <app-page-header title="Quiz do Amor" subtitle="Quanto você sabe sobre nós?" backLink="/jogos" />
+    <app-page-header title="Quiz do Amor" subtitle="Quanto tu sabe sobre nós?" backLink="/jogos" />
 
     @if (!finished()) {
       <div class="card mb-4">
@@ -125,8 +125,8 @@ export class QuizComponent {
 
   resultMessage(): string {
     const ratio = this.score() / this.questions.length;
-    if (ratio === 1) return 'Perfeita! Você conhece cada detalhe do nosso amor!';
-    if (ratio >= 0.8) return 'Incrível! Você sabe quase tudo sobre nós!';
+    if (ratio === 1) return 'Perfeita! Tu conhece cada detalhe do nosso amor!';
+    if (ratio >= 0.8) return 'Incrível! Tu sabe quase tudo sobre nós!';
     if (ratio >= 0.5) return 'Boa! Mas ainda tem histórias pra descobrir juntos.';
     return 'Haha, acho que alguém precisa prestar mais atenção no namorado! Brincadeira, te amo!';
   }

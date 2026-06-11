@@ -20,14 +20,11 @@ import { IconComponent } from '../../shared/icons/icon.component';
           class="coupon-card card relative overflow-hidden"
           [class.coupon-redeemed]="progress.isCouponRedeemed(coupon.id)"
         >
-          <div class="flex items-start gap-4">
+          <div class="flex items-center gap-4">
             <div class="icon-circle">
               <app-icon [name]="coupon.icon" [size]="24" class="text-pink-300" />
             </div>
-            <div class="flex-1 min-w-0">
-              <h3 class="text-white font-semibold">{{ coupon.title }}</h3>
-              <p class="text-pink-100/70 text-sm mt-1">{{ coupon.description }}</p>
-            </div>
+            <h3 class="flex-1 min-w-0 text-white font-semibold">{{ coupon.title }}</h3>
           </div>
 
           @if (progress.isCouponRedeemed(coupon.id)) {
