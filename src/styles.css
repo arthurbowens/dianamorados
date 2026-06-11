@@ -71,16 +71,136 @@ body {
 }
 
 .intro-screen {
-  background: var(--color-rose-bg);
+  background: var(--color-rose-deep);
   position: relative;
 }
 
-.intro-screen::before {
+.intro-cinematic::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 65% 55% at 50% 35%, rgba(244, 63, 94, 0.2), transparent);
+  background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(159, 18, 57, 0.25), transparent 70%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.intro-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.intro-stars-1 {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 241, 242, 0.9), transparent),
+    radial-gradient(1px 1px at 80px 120px, rgba(254, 205, 211, 0.8), transparent),
+    radial-gradient(1.5px 1.5px at 160px 60px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 240px 180px, rgba(255, 241, 242, 0.6), transparent),
+    radial-gradient(1px 1px at 320px 40px, rgba(254, 205, 211, 0.85), transparent),
+    radial-gradient(1.5px 1.5px at 400px 140px, rgba(255, 255, 255, 0.75), transparent),
+    radial-gradient(1px 1px at 480px 90px, rgba(255, 241, 242, 0.65), transparent),
+    radial-gradient(1px 1px at 560px 200px, rgba(254, 205, 211, 0.7), transparent);
+  background-size: 600px 220px;
+  animation: intro-stars-drift 90s linear infinite;
+  opacity: 0.7;
+}
+
+.intro-stars-2 {
+  background-image:
+    radial-gradient(1px 1px at 50px 80px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 130px 20px, rgba(251, 113, 133, 0.6), transparent),
+    radial-gradient(1px 1px at 210px 150px, rgba(255, 241, 242, 0.55), transparent),
+    radial-gradient(1px 1px at 290px 70px, rgba(255, 255, 255, 0.45), transparent),
+    radial-gradient(1px 1px at 370px 190px, rgba(254, 205, 211, 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 450px 110px, rgba(255, 255, 255, 0.6), transparent);
+  background-size: 500px 200px;
+  animation: intro-stars-drift 120s linear infinite reverse;
+  opacity: 0.5;
+}
+
+.intro-stars-3 {
+  background-image:
+    radial-gradient(2px 2px at 100px 100px, rgba(244, 63, 94, 0.35), transparent),
+    radial-gradient(2px 2px at 300px 50px, rgba(251, 113, 133, 0.3), transparent),
+    radial-gradient(2px 2px at 500px 160px, rgba(225, 29, 72, 0.25), transparent);
+  background-size: 600px 200px;
+  animation: intro-stars-twinkle 4s ease-in-out infinite alternate;
+  opacity: 0.4;
+}
+
+@keyframes intro-stars-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-220px);
+  }
+}
+
+@keyframes intro-stars-twinkle {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.55;
+  }
+}
+
+.intro-quote {
+  position: relative;
+  z-index: 1;
+  min-height: 5rem;
+}
+
+.intro-cursor {
+  display: inline-block;
+  color: var(--color-rose-light);
+  animation: intro-blink 0.9s step-end infinite;
+  margin-left: 1px;
+}
+
+.intro-cursor-hidden {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes intro-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.intro-reveal {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-reveal-label {
+  animation: fade-in-up 0.8s ease-out both;
+}
+
+.intro-name-glow {
+  animation:
+    fade-in-up 1s ease-out 0.3s both,
+    intro-name-pulse 3s ease-in-out 1.3s infinite;
+  text-shadow:
+    0 0 40px rgba(244, 63, 94, 0.5),
+    0 0 80px rgba(225, 29, 72, 0.25);
+}
+
+@keyframes intro-name-pulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 40px rgba(244, 63, 94, 0.5),
+      0 0 80px rgba(225, 29, 72, 0.25);
+  }
+  50% {
+    text-shadow:
+      0 0 55px rgba(244, 63, 94, 0.7),
+      0 0 100px rgba(225, 29, 72, 0.4);
+  }
 }
 
 .floating-decor::before,

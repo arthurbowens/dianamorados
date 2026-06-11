@@ -1,4 +1,4 @@
-import { Component, signal, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { APP_CONFIG } from '../../core/data/app-data';
 import { ProgressService } from '../../core/services/progress.service';
@@ -9,22 +9,30 @@ import { IconComponent } from '../../shared/icons/icon.component';
   imports: [IconComponent],
   template: `
     <div
-      class="intro-screen min-h-dvh flex flex-col items-center justify-center px-6 text-center relative z-10 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]"
+      class="intro-screen intro-cinematic min-h-dvh flex flex-col items-center justify-center px-6 text-center relative z-10 pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)] overflow-hidden"
     >
-      <div class="floating-decor" aria-hidden="true"></div>
+      <div class="intro-stars intro-stars-1" aria-hidden="true"></div>
+      <div class="intro-stars intro-stars-2" aria-hidden="true"></div>
+      <div class="intro-stars intro-stars-3" aria-hidden="true"></div>
 
       @if (phase() === 0) {
-        <p class="section-label animate-fade-in">Uma surpresa para</p>
-        <h1 class="font-display text-5xl md:text-6xl text-white mt-3 animate-fade-in-up tracking-tight">
-          {{ herName }}
-        </h1>
-        <button class="btn-primary mt-12 animate-fade-in-up" (click)="nextPhase()">
-          Continuar
-        </button>
+        <p class="intro-quote font-display text-xl sm:text-2xl text-rose-100/90 leading-relaxed max-w-md">
+          {{ displayedText() }}<span class="intro-cursor" [class.intro-cursor-hidden]="typingDone()">|</span>
+        </p>
       }
 
       @if (phase() === 1) {
-        <div class="animate-fade-in max-w-sm">
+        <div class="intro-reveal animate-fade-in">
+          <p class="section-label intro-reveal-label">Essa pessoa é</p>
+          <h1 class="font-display text-5xl md:text-7xl text-rose-50 mt-4 intro-name-glow tracking-tight">
+            {{ herName }}
+          </h1>
+          <button class="btn-primary mt-14 animate-fade-in-up" (click)="nextPhase()">Continuar</button>
+        </div>
+      }
+
+      @if (phase() === 2) {
+        <div class="animate-fade-in max-w-sm relative z-10">
           <div class="icon-circle-lg mx-auto mb-6">
             <app-icon name="mail" [size]="40" class="text-pink-300" />
           </div>
@@ -38,9 +46,15 @@ import { IconComponent } from '../../shared/icons/icon.component';
     </div>
   `,
 })
-export class IntroComponent implements OnInit {
+export class IntroComponent implements OnInit, OnDestroy {
   readonly herName = APP_CONFIG.herName;
   readonly phase = signal(0);
+  readonly displayedText = signal('');
+  readonly typingDone = signal(false);
+
+  private readonly fullQuote = 'Existe uma pessoa que mudou completamente a minha vida...';
+  private typeInterval: ReturnType<typeof setInterval> | null = null;
+  private revealTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor(
     private readonly router: Router,
@@ -50,15 +64,40 @@ export class IntroComponent implements OnInit {
   ngOnInit(): void {
     if (this.progress.introSeen()) {
       this.router.navigate(['/home']);
+      return;
     }
+    this.startTypewriter();
+  }
+
+  ngOnDestroy(): void {
+    this.clearTimers();
   }
 
   nextPhase(): void {
-    this.phase.set(1);
+    this.phase.set(2);
   }
 
   enter(): void {
     this.progress.markIntroSeen();
     this.router.navigate(['/home']);
+  }
+
+  private startTypewriter(): void {
+    let index = 0;
+    this.typeInterval = setInterval(() => {
+      index++;
+      this.displayedText.set(this.fullQuote.slice(0, index));
+      if (index >= this.fullQuote.length) {
+        if (this.typeInterval) clearInterval(this.typeInterval);
+        this.typeInterval = null;
+        this.typingDone.set(true);
+        this.revealTimer = setTimeout(() => this.phase.set(1), 1800);
+      }
+    }, 42);
+  }
+
+  private clearTimers(): void {
+    if (this.typeInterval) clearInterval(this.typeInterval);
+    if (this.revealTimer) clearTimeout(this.revealTimer);
   }
 }
